@@ -17,7 +17,7 @@ const ResultPage: React.FC = () => {
       </div>
       <Link
         href="/quiz"
-        className="bg-dark text-white sm:px-24 text-center rounded-full hover:opacity-95 font-medium sm:text-xl md:text-2xl sm:w-fit text-nowrap text-lg w-full py-6"
+        className="bg-dark text-white sm:px-24 text-center rounded-full hover:opacity-95 font-medium sm:text-xl md:text-2xl sm:w-fit text-nowrap text-lg w-full py-4"
       >
         Try Again
       </Link>

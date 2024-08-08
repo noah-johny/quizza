@@ -53,7 +53,7 @@ const QuizPage = () => {
         </div>
       </div>
 
-      <div className="py-12 w-full h-full flex flex-col justify-between">
+      <div className="pt-12 pb-4 w-full h-full flex flex-col justify-between">
         <div className="flex flex-col gap-2">
           <span className="font-normal text-base w-full text-left">
             Question {nextQuestion + 1}
@@ -75,7 +75,7 @@ const QuizPage = () => {
                 key={index}
                 disabled={showAnswer}
                 onClick={() => handleOptionClick(option)}
-                className={`border-dark border-2 py-2 sm:py-4 md:py-6 w-full rounded-xl disabled:cursor-default ${
+                className={`border-dark border-2 py-2 sm:py-4 w-full rounded-xl disabled:cursor-default ${
                   showAnswer && selectedOption === ""
                     ? isCorrectOption
                       ? "border-green text-green"
@@ -89,12 +89,15 @@ const QuizPage = () => {
                     : "bg-transparent text-dark"
                 }`}
                 style={{
-                  border:
-                    showAnswer && selectedOption === ""
+                  border: showAnswer
+                    ? selectedOption === ""
                       ? isCorrectOption
                         ? "2px solid green"
                         : "2px solid red"
-                      : "2px solid black",
+                      : isCorrectOption
+                      ? "2px solid green"
+                      : "2px solid black"
+                    : "2px solid black",
                 }}
               >
                 {option}
@@ -105,7 +108,7 @@ const QuizPage = () => {
 
         <Link
           href={nextQuestion === questions.length - 1 ? "/result" : ""}
-          className="bg-dark text-white rounded-full px-16 py-4 text-center font-medium hover:opacity-95 sm:py-6 sm:w-64 sm:ml-auto sm:text-xl"
+          className="bg-dark text-white rounded-full px-16 py-4 text-center font-medium hover:opacity-95 sm:w-64 sm:ml-auto sm:text-xl"
           onClick={handleNextClick}
         >
           {nextQuestion === questions.length - 1 ? "Finish" : "Next"}
