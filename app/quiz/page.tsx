@@ -19,13 +19,11 @@ const QuizPage = () => {
     timerRunning,
   } = useQuizContext();
 
-  const resetQuiz = () => {
+  useEffect(() => {
     setScore({ right: 0, wrong: 0 });
     setNextQuestion(0);
     setShowAnswer(false);
-  };
-
-  useEffect(() => resetQuiz, []);
+  }, []);
 
   const handleOptionClick = async (option: string) => {
     setSelectedOption(option);
@@ -40,11 +38,7 @@ const QuizPage = () => {
   return (
     <div className="h-dvh w-full bg-white p-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 max-w-7xl flex justify-between flex-col items-center mx-auto">
       <div className="w-full flex justify-between items-center text-bold">
-        <Link
-          href="/"
-          className="font-bold text-3xl text-left"
-          onClick={resetQuiz}
-        >
+        <Link href="/" className="font-bold text-3xl text-left">
           Quizza.
         </Link>
         <div className="flex gap-4 items-center sm:gap-6 md:gap-8">
