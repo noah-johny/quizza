@@ -75,7 +75,7 @@ const QuizPage = () => {
                 key={index}
                 disabled={showAnswer}
                 onClick={() => handleOptionClick(option)}
-                className={`border-dark border-2 py-4 md:py-6 w-full rounded-xl disabled:cursor-default ${
+                className={`border-dark border-2 py-2 sm:py-4 md:py-6 w-full rounded-xl disabled:cursor-default ${
                   showAnswer && selectedOption === ""
                     ? isCorrectOption
                       ? "border-green text-green"

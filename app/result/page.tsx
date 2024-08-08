@@ -4,14 +4,16 @@ import { useQuizContext } from "@/context/quiz-context";
 import Link from "next/link";
 
 const ResultPage: React.FC = () => {
-  const { score, questions, setScore } = useQuizContext();
+  const { score, questions } = useQuizContext();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center sm:gap-24 gap-16 px-8 bg-white">
-      <div className="flex flex-col items-center gap-4 sm:gap-6">
-        <span className="font-normal sm:text-2xl text-md">You Scored</span>
-        <span className="font-semibold sm:text-9xl text-5xl">
-          {score.right}/{questions.length}
-        </span>
+    <main className="flex h-dvh flex-col items-center justify-center gap-24 px-8 bg-white">
+      <div className="flex flex-col items-center gap-8 sm:gap-12">
+        <span className="font-normal sm:text-xl text-md">You Scored</span>
+        <div className="flex font-semibold text-9xl sm:text-[10rem] md:text-[12rem] xl:text-[16rem]">
+          <span className="">{score.right}</span>
+          <span className="font-extralight">/</span>
+          <span className="">{questions.length}</span>
+        </div>
       </div>
       <Link
         href="/quiz"
