@@ -19,9 +19,6 @@ const config: Config = {
         success: "#33FF33",
       },
     },
-    fontFamily: {
-      primary: ["Poppins", "sans-serif"],
-    },
   },
   plugins: [],
 };
