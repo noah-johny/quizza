@@ -15,12 +15,20 @@ const ResultPage: React.FC = () => {
           <span className="">{questions.length}</span>
         </div>
       </div>
-      <Link
-        href="/quiz"
-        className="bg-dark text-white sm:px-24 text-center rounded-full hover:opacity-95 font-medium sm:text-xl md:text-2xl sm:w-fit text-nowrap text-lg w-full py-4"
-      >
-        Try Again
-      </Link>
+      <div className="flex flex-wrap-reverse gap-2 w-full justify-center">
+        <Link
+          href="/quiz"
+          className="bg-dark text-white border-dark border-2 sm:px-24 text-center rounded-full hover:opacity-95 font-medium sm:text-xl md:text-2xl sm:w-80 text-nowrap text-lg w-full py-4"
+        >
+          Try Again
+        </Link>
+        <Link
+          href="/"
+          className="border-dark text-dark border-2 sm:px-24 text-center rounded-full hover:opacity-95 font-medium sm:text-xl md:text-2xl sm:w-80 text-nowrap text-lg w-full py-4"
+        >
+          Home
+        </Link>
+      </div>
     </main>
   );
 };
